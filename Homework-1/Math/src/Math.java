@@ -29,8 +29,7 @@ public class Math
     }
     public static long factRec (int renum)
     {
-        if (renum < 0)
-            return 0;
+        if (renum < 0) throw new IllegalArgumentException("Wrong argument,please try to write non-negative number")
         if (renum == 0 || renum == 1 )
             return 1;
         return renum * factRec(renum-1);
