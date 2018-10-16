@@ -1,16 +1,16 @@
 public class FibonachiSolver {
 
-    public static void fibNum(int size) {
+    public static long calculate(long number) {
 
-        int fibFirst, fibSecond, fibSum;
-        fibFirst = 1;
-        fibSecond = 1;
-        for (int i = 0; i < size; i++)
+        long first, second, sum = 0;
+        first = 1;
+        second = 1;
+        for (int i = 0; i < number; i++)
         {
-            fibSum = fibFirst + fibSecond;
-            fibFirst = fibSecond;
-            fibSecond = fibSum ;
-            System.out.println(fibSum);
+            sum = first + second;
+            first = second;
+            second = sum ;
         }
+	return sum;
     }
 };

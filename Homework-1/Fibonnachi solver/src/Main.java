@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        int mSize = 5;
-        obFib.fibNum(mSize);
+        int number = 5;
+        System.out.println(FibonachiSolver.calculate(number));
+
     }
 }
