@@ -1,12 +1,12 @@
 public class Wizard extends Hero {
-    private int agility;
-    private int intelligent;
-    private int strength;
-    private int physicaldamage;
-    private int magicaldamage;
-    private int physicalresist;
-    private int magicalresist;
-    private String weapon;
+    protected int agility;
+    protected int intelligent;
+    protected int strength;
+    protected int physicaldamage;
+    protected int magicaldamage;
+    protected int physicalresist;
+    protected int magicalresist;
+    protected String weapon;
     Wizard(String heroName,boolean sex,String race)
     {
         super(heroName,sex,race);

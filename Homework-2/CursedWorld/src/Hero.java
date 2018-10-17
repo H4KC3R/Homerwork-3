@@ -1,8 +1,8 @@
 public class Hero {
-    private String heroName;
-    private boolean sex;
-    private String race;
-    private int heroLevel;
+    protected String heroName;
+    protected boolean sex;
+    protected String race;
+    protected int heroLevel;
 
     Hero(String heroName,boolean sex,String race)
     {
@@ -13,6 +13,7 @@ public class Hero {
             throw new IllegalArgumentException("This race doesn't exist at Cursed World,please choose one of 4 :" + "\n"+
                     "1.Human" + "\n" +
                     "2.Ork" + "\n" + "3.Undead"+"\n" + "4.Elves");
+        else this.race = race;
     }
     public int getHerolevel()
     {
