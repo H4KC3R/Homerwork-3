@@ -3,7 +3,7 @@ public class Player {
     protected int attempt;
 
     Player() {
-        this.attempt = 0;
+        this.attempt = 1;
     }
 
     protected int getAttempt() {
@@ -24,4 +24,13 @@ public class Player {
     {
         this.attempt ++;
     }
+    protected void gameRestart()
+    {
+        this.attempt = 1;
+    }
+    protected void gameOver()
+    {
+        this.attempt = 4;
+    }
+
 }

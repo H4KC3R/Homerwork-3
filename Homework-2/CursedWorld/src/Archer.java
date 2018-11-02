@@ -2,10 +2,10 @@ public class Archer extends Hero{
     protected int agility;
     protected int intelligent;
     protected int strength;
-    protected int physicaldamage;
-    protected int magicaldamage;
-    protected int physicalresist;
-    protected int magicalresist;
+    protected int physicalDamage;
+    protected int magicalDamage;
+    protected int physicalResist;
+    protected int magicalResist;
     protected String weapon;
     Archer(String heroName,boolean sex,String race)
     {
@@ -13,20 +13,20 @@ public class Archer extends Hero{
         this.agility = 60;
         this.intelligent = 10;
         this.strength = 50;
-        this.physicaldamage = 80;
-        this.magicaldamage = 20;
-        this.physicalresist = 30;
-        this.magicalresist = 30;
+        this.physicalDamage = 80;
+        this.magicalDamage = 20;
+        this.physicalResist = 30;
+        this.magicalResist = 30;
     }
     public void getCharacteristics ()
     {
         System.out.println(this.agility);
         System.out.println(this.strength);
         System.out.println(this.intelligent);
-        System.out.println(this.magicaldamage);
-        System.out.println(this.magicalresist);
-        System.out.println(this.physicalresist);
-        System.out.println(this.physicaldamage);
+        System.out.println(this.magicalDamage);
+        System.out.println(this.magicalResist);
+        System.out.println(this.physicalResist);
+        System.out.println(this.physicalDamage);
 
     }
     public void takeWeapon(int magic,int weight,int agile,String weaponName)

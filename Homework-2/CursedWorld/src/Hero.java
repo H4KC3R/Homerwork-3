@@ -9,11 +9,17 @@ public class Hero {
         this.heroLevel = 0;
         this.heroName = heroName;
         this.sex = sex;
-        if ((race.equals("Human") == false ) || (race.equals("Elves") == false ) || (race.equals("Undead") == false ) || (race.equals("Ork") == false ))
+        this.race = race;
+        if (((race.equals("Human")) == false ) && ((race.equals("Elves")) == false ) && ((race.equals("Undead") == false )) && ((race.equals("Ork") == false )))
+        {
             throw new IllegalArgumentException("This race doesn't exist at Cursed World,please choose one of 4 :" + "\n"+
                     "1.Human" + "\n" +
                     "2.Ork" + "\n" + "3.Undead"+"\n" + "4.Elves");
-        else this.race = race;
+        }
+        else
+        {
+            this.race = race;
+        }
     }
     public int getHerolevel()
     {

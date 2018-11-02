@@ -15,5 +15,5 @@ public class Main {
         Garrosh.takeWeapon(0,40,10,"Heavy axe");
         Garrosh.getCharacteristics();
         Garrosh.showWeapon();
-}
+    }
 }
