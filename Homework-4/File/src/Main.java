@@ -1,8 +1,20 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.lang.String;
 public class Main {
     public static void main(String[] args) {
-        System.out.println(FileUtils.fileExists("/home/daminov/Рабочий стол/физтех"));
-        System.out.println(FileUtils.dirExists("/home/daminov/Рабочий стол/физтех"));
-        System.out.println(FileUtils.fileReadAll("/home/daminov/Рабочий стол/физтех"));
+        List<String> ff= new ArrayList<String> ()
+        {
+            {
+                add("8============\n");
+                add("=================\n");
+                add("=======================D\n");
+            }
+        };
+        System.out.println(FileUtils.exists("/home/daminov/Рабочий стол/физтех"));
+        System.out.println(FileUtils.exists("/home/daminov/Рабочий стол/физтех"));
+        FileUtils.writeAll("/home/daminov/Рабочий стол/физтех",ff);
+        System.out.println(FileUtils.readAll("/home/daminov/Рабочий стол/физтех"));
 
     }
 }

@@ -1,62 +1,47 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 
-public class FileUtils {
+public final class FileUtils {
 
-    public static boolean dirExists(String path)
-    {
-        File dir = new File(path);
-        if (dir.isDirectory()) {
-            return true;
-        } else {
-            return false;
-        }
+    public static boolean exists(String path) {
+        return exists(new File(path));
     }
-    public static boolean fileExists(String path)
-    {
-        File file = new File(path);
-        if (file.isFile()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
- /*   public static List<String> dirReadAll(String path)
-    {
-        ArrayList<String> fileNames = new ArrayList<String>();
-        try
-        {
-            File dir = new File(path);
-            fileNames = Arrays.asList(dir.list());
 
-        }
-       catch (IOException ex)
-       {
-           System.out.println(ex.getMessage());
-       }
-       return fileNames;
+    public static boolean exists(File file) {
+        return file.exists();
     }
-*/
-    public static List<String> fileReadAll(String path)  {
-        ArrayList<String> text = new ArrayList<String>();
-        try {
-            File file = new File(path);
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
+
+    public static List<String> readAll(String path) {
+        List<String> lines = new ArrayList<>();
+        try (FileReader fr = new FileReader(path);
+             BufferedReader text = new BufferedReader(fr)) {
 
             String line;
-            while ((line = reader.readLine()) != null)
-            {
-                text.add(line);
+            while ((line = text.readLine()) != null) {
+                lines.add(line);
             }
-            reader.close();
+        } catch (IOException e) {
+            System.err.println("Exception while reading file:" + path);
+            throw new RuntimeException(e);
+        }
+        return lines;
+    }
 
+    public static void writeAll(String path, List<String> lines) {
+        File file = new File(path);
+        if (!file.exists() || file.isDirectory()) {
+            throw new IllegalArgumentException("Path should be file,not directory");
+        } else {
+            try (FileWriter fw = new FileWriter(file);
+                 BufferedWriter text = new BufferedWriter(fw)) {
+                for (String line : lines) {
+                    text.write(line);
+                }
+
+            } catch (IOException e) {
+                System.err.println("Exception while writting file:" + path);
+            }
         }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
-        return text;
     }
 }
